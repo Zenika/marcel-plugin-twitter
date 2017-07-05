@@ -1,7 +1,7 @@
 {
   "name": "Twitter",
   "description": "Displays tweets",
-  "elementName": "marcel-plugin-tweet",
+  "elementName": "marcel-plugin-twitter",
   "files": ["index.html"],
   "icon": "",
   "props": [
