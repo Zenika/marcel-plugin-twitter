@@ -1,5 +1,5 @@
 {
-  "name": "marcel-plugin-temperature",
+  "name": "marcel-plugin-twitter",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
