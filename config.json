@@ -1,15 +1,16 @@
 {
   "name": "Twitter",
   "description": "Displays tweets",
-  "elementName": "marcel-plugin-twitter",
-  "files": ["index.html"],
-  "icon": "",
-  "props": [
-    {
-      "name": "api",
-      "description": "Url of the api for the tweets",
-      "type": "string",
-      "defaultValue": "http://localhost:8080"
-    }
-  ]
+  "eltName": "marcel-plugin-twitter",
+  "icon": "picture_in_picture_alt",
+  "frontend": {
+    "props": [
+      {
+        "name": "widgetID",
+        "description": "The twitter timeline widget ID",
+        "type": "string",
+        "value": ""
+      }
+    ]
+  }
 }

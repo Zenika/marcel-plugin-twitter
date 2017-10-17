@@ -1,0 +1,74 @@
+<link href="static/css/main.5d5ab35b.css" rel="stylesheet">
+<script src="static/js/main.3f462ea6.js"></script>
+
+<script></script>
+
+<dom-module id="marcel-plugin-twitter">
+  <template>
+    <div id="root"></div>
+  </template>
+
+  <script>
+    (() => {
+      class Twitter extends Polymer.Element {
+        static get is() { return 'marcel-plugin-twitter' }
+
+        static get properties() {
+          return {
+            widgetid: String,
+          }
+        }
+
+        connectedCallback() {
+          super.connectedCallback()
+
+          // Get all properties defined by the dom element
+          let props = {}
+          Object.keys(Twitter.properties).forEach(prop => props[prop] = this[prop])
+
+          // Bottstrap react application
+          //document.marcelPluginTwitter.render(this.shadowRoot.querySelector("#root"), props)
+          this.initTwitterAPI()
+          window.twttr.ready(this.displayTimeline.bind(this))
+
+        }
+
+        displayTimeline() {
+          console.log("Loading timeline : ", this.widgetid)
+          twttr.widgets.createTimeline(
+            this.widgetid,
+            this.$.root,
+            { height: window.screen.height }
+          );
+        }
+
+        initTwitterAPI() {
+          const id = "twitter-wjs", s = "script", src = "https://platform.twitter.com/widgets.js"
+
+          const loadAPI = () => {
+            const twttr = window.twttr || {}
+            if (document.getElementById(id)) return twttr
+
+            const fjs = document.getElementsByTagName(s)[0]
+            const js = document.createElement(s)
+
+            js.id = id
+            js.src = src
+            fjs.parentNode.insertBefore(js, fjs)
+
+            twttr._e = []
+            twttr.ready = function (f) {
+              twttr._e.push(f)
+            }
+
+            return twttr;
+          }
+
+          window.twttr = loadAPI()
+        }
+      }
+
+      customElements.define(Twitter.is, Twitter);
+    })();
+  </script>
+</dom-module>
