@@ -1,0 +1,14 @@
+{
+  "eltName": "marcel-plugin-twitter",
+  "name": "Twitter",
+  "description": "Displays tweets",
+  "frontend": {
+    "props": [
+      {
+        "name": "widgetID",
+        "type": "string",
+        "description": "The twitter timeline widget ID",
+      }
+    ]
+  }
+}
