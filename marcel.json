@@ -5,9 +5,34 @@
   "frontend": {
     "props": [
       {
-        "name": "widgetID",
+        "name": "url",
         "type": "string",
-        "description": "The twitter timeline widget ID",
+        "description": "The twitter url to be displayed (profile, collection, moment, likes, public list)"
+      },
+      {
+        "name": "lang",
+        "type": "string",
+        "description": "The language used by the twitter widget (fr, en, es...)"
+      },
+      {
+        "name": "width",
+        "type": "string",
+        "description": "The width of the widget in px"
+      },
+      {
+        "name": "height",
+        "type": "string",
+        "description": "The height of the widget in px"
+      },
+      {
+        "name": "theme",
+        "type": "string",
+        "description": "Twitter widget theme (dark or light)"
+      },
+      {
+        "name": "linkColor",
+        "type": "string",
+        "description": "Color used by the widget to render links"
       }
     ]
   }
